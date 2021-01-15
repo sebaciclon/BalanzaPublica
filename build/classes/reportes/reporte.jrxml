@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4ab8887d-48de-4350-a0d5-06502e63f769">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="48"/>
+	<parameter name="id_factura" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     factura.`id_factura` AS factura_id_factura,
+     factura.`operador` AS factura_operador,
+     factura.`Sr` AS factura_Sr,
+     factura.`producto` AS factura_producto,
+     factura.`transp` AS factura_transp,
+     factura.`conductor` AS factura_conductor,
+     factura.`patente_chasis` AS factura_patente_chasis,
+     factura.`patente_acoplado` AS factura_patente_acoplado,
+     factura.`peso_entrada` AS factura_peso_entrada,
+     factura.`peso_salida` AS factura_peso_salida,
+     factura.`peso_neto` AS factura_peso_neto,
+     factura.`fecha_entrada` AS factura_fecha_entrada,
+     factura.`hora_entrada` AS factura_hora_entrada,
+     factura.`fecha_salida` AS factura_fecha_salida,
+     factura.`hora_salida` AS factura_hora_salida
+FROM
+     `factura` factura
+WHERE
+     `factura`.id_factura=$P!{id_factura}]]>
+	</queryString>
+	<field name="factura_id_factura" class="java.lang.Integer"/>
+	<field name="factura_operador" class="java.lang.String"/>
+	<field name="factura_Sr" class="java.lang.String"/>
+	<field name="factura_producto" class="java.lang.String"/>
+	<field name="factura_transp" class="java.lang.String"/>
+	<field name="factura_conductor" class="java.lang.String"/>
+	<field name="factura_patente_chasis" class="java.lang.String"/>
+	<field name="factura_patente_acoplado" class="java.lang.String"/>
+	<field name="factura_peso_entrada" class="java.lang.Double"/>
+	<field name="factura_peso_salida" class="java.lang.Double"/>
+	<field name="factura_peso_neto" class="java.lang.Double"/>
+	<field name="factura_fecha_entrada" class="java.lang.String"/>
+	<field name="factura_hora_entrada" class="java.lang.String"/>
+	<field name="factura_fecha_salida" class="java.lang.String"/>
+	<field name="factura_hora_salida" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="102" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="141" height="20" uuid="97ee5bbb-eb9a-47f3-b581-a011293d87aa"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JORGE H. WALTER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="20" width="182" height="20" uuid="b4cd54ed-9592-419f-adc0-2805fb6c7f98"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Balanza Pùblica "Los Rusos"]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="40" width="289" height="20" uuid="0e4bca79-480b-4057-9162-0b49bc7b40a2"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ruta 30 y 50 Rauch, Telèfono: 0249 - 154575341]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="60" width="258" height="20" uuid="c128aa05-6c80-473e-97db-0107f8c5cb08"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[I.V.A. RESPONSABLE INSCRIPTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="80" width="555" height="20" uuid="96e170d6-f8fe-4bd1-9b76-dd3c7131003e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[******************************************************************************************************************************************]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="373" y="60" width="182" height="20" uuid="0644934a-02a6-44c2-b3f4-5e851a17605b"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[C.U.I.T.: 20-20047307-9]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="371" splitType="Stretch">
+			<staticText>
+				<reportElement x="387" y="4" width="68" height="20" uuid="90979c5b-ae07-44af-b667-bbd16b1cf398"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TICKET NRO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="455" y="4" width="100" height="20" uuid="3d0a7b4a-3df1-464a-9f43-09ad0df306ef"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{factura_id_factura}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="4" width="48" height="20" uuid="ab7c4690-61c5-4bf9-8455-c7e6da91dd73"/>
+				<text><![CDATA[Operador:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="48" y="4" width="100" height="20" uuid="807ed039-7f54-4439-89ce-398ba624ed65"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{factura_operador}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="24" width="21" height="20" uuid="05d8b19d-148a-46d7-be70-6cf0e6eca7d5"/>
+				<text><![CDATA[Sr.:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="21" y="24" width="127" height="20" uuid="3007c010-54ba-4bc6-9659-7af928113293"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{factura_Sr}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="44" width="51" height="20" uuid="e7d1761d-0aae-4c28-9831-12bf85977bdf"/>
+				<text><![CDATA[Producto:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="48" y="44" width="100" height="20" uuid="ebe9a6ec-9619-42bb-9502-e28727ce3939"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{factura_producto}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="64" width="38" height="20" uuid="8471bb08-a525-4a5e-829f-e775a023062c"/>
+				<text><![CDATA[Transp.:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="41" y="64" width="100" height="20" uuid="dfedad9c-68ad-4e94-9db0-75f0c851caad"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{factura_transp}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="84" width="555" height="20" uuid="4adfffa7-797d-44f4-ad2d-1867b592740e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[******************************************************************************************************************************************]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="104" width="53" height="20" uuid="c5bf8cb6-4472-4b4c-847a-7f48791a6e80"/>
+				<text><![CDATA[Conductor:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="53" y="104" width="100" height="20" uuid="a567dafe-d1ad-47f3-bf22-9a461c298aa0"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{factura_conductor}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="124" width="77" height="20" uuid="5ed36ba4-fe64-459e-a9be-dfcb999e1571"/>
+				<text><![CDATA[Patente Chasis:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="77" y="124" width="100" height="20" uuid="e61e8518-ebf0-4cab-a733-f1e91308def5"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{factura_patente_chasis}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="258" y="124" width="93" height="20" uuid="95eaa064-4e13-41a6-b878-35f1c841b91e"/>
+				<text><![CDATA[Patente Acoplado:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="351" y="124" width="100" height="20" uuid="7f762265-bf1c-4a14-9426-05145a0b5e37"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{factura_patente_acoplado}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="144" width="555" height="20" uuid="6ce452aa-e073-4ade-a6e6-f968932ce202"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[*******************************************************************************************************************************************]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="164" width="87" height="20" uuid="c009bd5d-8b5c-4ab5-a12f-7efa5ae2c5a0"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Peso Entrada:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="87" y="164" width="100" height="20" uuid="113303d0-e370-49d1-88fd-ec6566a53be1"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{factura_peso_entrada}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="200" y="164" width="25" height="20" uuid="41ed0c21-e5da-488c-8f03-2593df0566a2"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kg.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="184" width="87" height="20" uuid="4bae9697-ddec-48de-8075-e9d89a8f4215"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Peso Salida:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="87" y="184" width="100" height="20" uuid="ab001402-a2f8-4366-b441-aa4cffb694d8"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{factura_peso_salida}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="200" y="184" width="25" height="20" uuid="53720b53-74b9-4625-a9c8-432a3cf61e57"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kg.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="87" y="204" width="100" height="20" uuid="70b74ac2-c0f7-41ae-abf2-3d96ab8b5c85"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[===================]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="224" width="87" height="20" uuid="6ddebfef-63a5-4c19-9fbe-1df0b12d1bfe"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Peso Neto:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="87" y="224" width="100" height="20" uuid="a0d9343c-5842-482b-a0fb-ba9339a3ce65"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{factura_peso_neto}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="200" y="224" width="27" height="20" uuid="57920dc2-b89a-41d2-9241-fad6ee6c3ca5"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kg.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="289" y="164" width="43" height="20" uuid="cef70803-63e1-44ad-a1aa-47ab7efd4c16"/>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="332" y="164" width="55" height="20" uuid="da1c7d37-f9aa-4eb5-96f6-3b2bb0da1c73"/>
+				<textFieldExpression><![CDATA[$F{factura_fecha_entrada}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="387" y="164" width="12" height="20" uuid="6bc06c7d-7ce5-4609-b268-10e1f35f946a"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[--]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="403" y="164" width="34" height="20" uuid="677b8df2-e17e-4b27-b16c-69da178dff36"/>
+				<textFieldExpression><![CDATA[$F{factura_hora_entrada}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="437" y="164" width="26" height="20" uuid="73e9ca68-1997-430c-b38e-7e99005f65b2"/>
+				<text><![CDATA[Hs.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="289" y="184" width="43" height="20" uuid="8f6299ba-131e-44bf-8690-387dddc32a9d"/>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="332" y="184" width="55" height="20" uuid="69b416d6-ae83-4414-ab8a-c03ff7d7e814"/>
+				<textFieldExpression><![CDATA[$F{factura_fecha_salida}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="387" y="184" width="12" height="20" uuid="de9fa1b7-2c25-47e2-b241-0b38e7956b2d"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[--]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="403" y="184" width="34" height="20" uuid="64e4c03a-c6c3-44c7-8e1c-4bc8ea3d89cf"/>
+				<textFieldExpression><![CDATA[$F{factura_hora_salida}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="437" y="184" width="26" height="20" uuid="a8ca82a9-26ee-4923-868c-e53678c38e5a"/>
+				<text><![CDATA[Hs.]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="4" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

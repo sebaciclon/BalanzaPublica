@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 04-may-2019 10:41:17 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="hibernate.Factura" table="factura" catalog="balanza_los_rusos" optimistic-lock="version">
+        <id name="idFactura" type="java.lang.Integer">
+            <column name="id_factura" />
+            <generator class="identity" />
+        </id>
+        <property name="operador" type="string">
+            <column name="operador" length="45" not-null="true" />
+        </property>
+        <property name="sr" type="string">
+            <column name="Sr" length="100" not-null="true" />
+        </property>
+        <property name="producto" type="string">
+            <column name="producto" length="45" not-null="true" />
+        </property>
+        <property name="transp" type="string">
+            <column name="transp" length="100" not-null="true" />
+        </property>
+        <property name="conductor" type="string">
+            <column name="conductor" length="100" not-null="true" />
+        </property>
+        <property name="patenteChasis" type="string">
+            <column name="patente_chasis" length="45" not-null="true" />
+        </property>
+        <property name="patenteAcoplado" type="string">
+            <column name="patente_acoplado" length="45" not-null="true" />
+        </property>
+        <property name="pesoEntrada" type="double">
+            <column name="peso_entrada" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="pesoSalida" type="double">
+            <column name="peso_salida" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="pesoNeto" type="double">
+            <column name="peso_neto" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="fechaEntrada" type="string">
+            <column name="fecha_entrada" length="45" not-null="true" />
+        </property>
+        <property name="horaEntrada" type="string">
+            <column name="hora_entrada" length="45" not-null="true" />
+        </property>
+        <property name="fechaSalida" type="string">
+            <column name="fecha_salida" length="45" not-null="true" />
+        </property>
+        <property name="horaSalida" type="string">
+            <column name="hora_salida" length="45" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
